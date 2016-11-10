@@ -15,7 +15,6 @@
 
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -25,7 +24,11 @@
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
+  <script type="text/javascript" src="//fast.fonts.net/jsapi/75adbc02-f37f-4e9c-960f-9e6158d065dd.js"></script>
 
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <link href="./js/fullpage/jquery.fullPage.css">
+  <script src="./js/fullpage/jquery.fullPage.js"></script>
 </head>
 <body>
 <style>
@@ -71,52 +74,16 @@
 </style>
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="page-container">
+  <div class="page-container" id="fullpage">
     <div class="section bg-dark">
       <div class="row">
-        <div class="one-half column" style="margin-top: 25%">
-          <h4>twombly</h4>
-          <p>We are a product design agency based in Europe and Portland. We build empathetic designs that delight users, build businesses, and launch emerging brands.</a>.</p>
+        <div class="one-half column" style="margin-top: 25%; color: white;">
+          <h1>twombly</h1>
+          <p>We are a product design agency based in Europe and Portland. We build empathetic designs that delight users, build businesses, and launch emerging brands.</p>
           <div class="navigation-bar">
             <a class="text-seafoam" href="#work">Work</a>
             <a class="text-skyblue" href="#contact">Contact</a>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="section bg-light">
-      <div class="row">
-        <div class="one-half column" style="margin-top: 25%">
-          <h4>twombly</h4>
-          <p>We are a product design agency based in Europe and Portland. We build empathetic designs that delight users, build businesses, and launch emerging brands.</a>.</p>
-        </div>
-        <div class="one-half column" style="margin-top: 25%">
-          <img src="https://b.fastcompany.net/multisite_files/codesign/imagecache/slideshow_large/slides/07_SFMOMA_RamsFC.jpg"/>
-        </div>
-      </div>
-    </div>
-    <div class="section bg-light">
-      <div class="row">
-        <div class="one-half column" style="margin-top: 25%">
-          <h4>twombly</h4>
-          <p>We are a product design agency based in Europe and Portland. We build empathetic designs that delight users, build businesses, and launch emerging brands.</a>.</p>
-        </div>
-        <div class="one-half column" style="margin-top: 25%">
-          <img src="https://b.fastcompany.net/multisite_files/codesign/imagecache/slideshow_large/slides/09_SFMOMA_RamsFC.jpg"/>
-        </div>
-      </div>
-    </div>
-    <div class="section bg-light">
-      <div class="row">
-        <div class="one-half column" style="margin-top: 25%">
-          <h2>twombly</h2>
-          <p>We love talking to new people and hearing about the things they're working on. If you’re intrested in working with us, we would love to hear from you!</p>
-          <br>
-          <span>Email: <a href="">theodore@twombly.co</a></span>
-          <br>
-          <span>Phone: +13339992222</span>
-          <br>
-          <span>FB Messenger: fb.me/twombly</span>
         </div>
       </div>
     </div>
@@ -156,8 +123,84 @@
         </div>
       </div>
     </div>
-  </div>
 
+    <div class="section bg-light">
+      <div class="row">
+        <div class="one-half column" style="margin-top: 25%">
+          <h2>twombly</h2>
+          <p>We love talking to new people and hearing about the things they're working on. If you’re intrested in working with us, we would love to hear from you!</p>
+          <br>
+          <span>Email: <a href="">theodore@twombly.co</a></span>
+          <br>
+          <span>Phone: +13339992222</span>
+          <br>
+          <span>FB Messenger: fb.me/twombly</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+<script>
+$(document).ready(function() {
+    $('#fullpage').fullpage({
+        //Navigation
+        lockAnchors: false,
+        navigation: false,
+        navigationPosition: 'right',
+        showActiveTooltip: false,
+        slidesNavigation: true,
+        slidesNavPosition: 'bottom',
+
+        //Scrolling
+        css3: true,
+        scrollingSpeed: 1000,
+        autoScrolling: true,
+        fitToSection: true,
+        fitToSectionDelay: 800,
+        scrollBar: false,
+        easing: 'easeInOutCubic',
+        easingcss3: 'ease',
+        loopBottom: false,
+        loopTop: false,
+        loopHorizontal: true,
+        continuousVertical: false,
+        continuousHorizontal: false,
+        scrollHorizontally: false,
+        interlockedSlides: false,
+        resetSliders: false,
+        fadingEffect: false,
+        normalScrollElements: '#element1, .element2',
+        scrollOverflow: false,
+        scrollOverflowOptions: null,
+        touchSensitivity: 100,
+        normalScrollElementTouchThreshold: 5,
+        bigSectionsDestination: null,
+
+        //Accessibility
+        keyboardScrolling: true,
+        animateAnchor: true,
+        recordHistory: true,
+
+        //Design
+        controlArrows: true,
+        verticalCentered: true,
+
+
+        //Custom selectors
+        sectionSelector: '.section',
+        slideSelector: '.slide',
+
+        //events
+        onLeave: function(index, nextIndex, direction){},
+        afterLoad: function(anchorLink, index){},
+        afterRender: function(){},
+        afterResize: function(){},
+        afterResponsive: function(isResponsive){},
+        afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
+        onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
+    });
+});
+</script>
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
